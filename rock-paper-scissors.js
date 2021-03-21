@@ -9,3 +9,20 @@
     Game Function Displays winner and loser and keeps count of score 
 
 */
+
+function computerPlay () { 
+    
+    
+}
+
+function playerPlay () { 
+
+}
+
+function playRound (playerSelection, computerSelection) { 
+
+}
+
+function game () { 
+
+}
