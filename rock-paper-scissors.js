@@ -13,21 +13,24 @@
 game();
 
 function computerPlay () { 
-    switch(MutationEvent.random()*Math.floor(3)){
+    switch(Math.floor(Math.random()*3)){
         case 0:
             return "rock";
+            break;
         case 1:
             return "paper";
+            break;
         case 2:
             return "scissors";
+            break;
     }
     
 }
 
-function playerPlay () {  //Error in logic 
-    let result;
+function playerPlay () {   
+    var result;
     while(result != ("rock" || "paper" || "scissors")){
-    let result = window.prompt("Paper, Scissors, Rock!").toLowerCase();
+     result = window.prompt("Paper, Scissors, Rock!").toLowerCase();
     }
     return result;
 }
@@ -38,7 +41,7 @@ function playRound (playerSelection, computerSelection) {
         return 0; 
     }else if (
     (playerSelection == "rock" && computerSelection == "paper") ||
-    (playerSelection== "paper" && computerSelection == "scissors") ||
+    (playerSelection == "paper" && computerSelection == "scissors") ||
     (playerSelection == "scissors" && computerSelection == "rock")
     ){
         console.log(`You Lose${playerSelection} loses to ${computerSelection}`)
@@ -52,14 +55,17 @@ function playRound (playerSelection, computerSelection) {
 function game () { 
     let playerCounter = 0;
     let computerCounter = 0; 
-    while ((playerCounter||computerCounter) != 5 ){
+    while ((playerCounter||computerCounter) <= 5 ){
         let result = playRound(playerPlay(), computerPlay());
         if (result == 1){
-            console.log('You Win')
             playerCounter++
         }else if(result == -1){
-            console.log('You Lose')
             computerCounter++
         }
     }   
+    if(playerCounter == 5){
+        console.log("Player Wins");
+    }else {
+        console.log("Player Loses")
+    }
 }
