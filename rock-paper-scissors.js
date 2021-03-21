@@ -11,18 +11,42 @@
 */
 
 function computerPlay () { 
-    
+    switch(MutationEvent.random()*Math.floor(3)){
+        case 0:
+            return "rock";
+        case 1:
+            return "paper";
+        case 2:
+            return "scissors";
+    }
     
 }
 
 function playerPlay () { 
-
+    while(result != ("rock" || "paper" || "scissors")){
+    let result = window.prompt("Paper, Scissors, Rock!").toLowerCase();
+    }
+    return result;
 }
 
 function playRound (playerSelection, computerSelection) { 
-
+    if(playerSelection == computerSelection) {
+        return 0; 
+    }else if (
+    (playerSelection == "rock" && computerSelection == "paper") ||
+    (playerSelection== "paper" && computerSelection == "scissors") ||
+    (playerSelection == "scissors" && computerSelection == "rock")
+    ){
+        return -1;
+    }else {
+        return 1;
+    }
 }
 
 function game () { 
-
+    let playerCounter = 0;
+    let computerCounter = 0; 
+    while ((playerCounter||computerCounter) != 5 ){
+        
+    }
 }
